@@ -1,0 +1,18 @@
+require("dotenv").config()
+
+const PORT = process.env.PORT
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
+const SESSION_SECRET= process.env.SESSION_SECRET
+const DATABASE_URL= process.env.DATABASE_URL
+const DEVELOPMENT_DATABASE_URL=process.env.DEVELOPMENT_DATABASE_URL
+const CLIENT_URL = process.env.CLIENT_URL
+module.exports = {
+    PORT,
+    GOOGLE_CLIENT_ID,
+    GOOGLE_CLIENT_SECRET,
+    SESSION_SECRET,
+    DATABASE_URL,
+    DEVELOPMENT_DATABASE_URL,
+    CLIENT_URL
+}
