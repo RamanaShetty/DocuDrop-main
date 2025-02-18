@@ -1,8 +1,6 @@
-const logger = require("../utils/logger")
 
-const errorHandler = (err, req, res, next) => {
-    logger.error(err.stack, err.message)
-
+// eslint-disable-next-line no-unused-vars
+const errorHandler = (err, req, res,next) => {
     const statusCode = err.status || 500
     const message = err.message || "Internal Server Error"
 
@@ -10,9 +8,9 @@ const errorHandler = (err, req, res, next) => {
         success: false,
         error: {
             message,
-            // details:
-            //     process.env.NODE_ENV === "production" ? undefined : err.stack, // Hide stack trace in production
         },
+        details:
+            process.env.NODE_ENV === "production" ? undefined : err.stack,
     })
 }
 
